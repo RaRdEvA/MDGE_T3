@@ -1,15 +1,13 @@
 '''
-
-Este script lee todos los achivos en la carpeta "raw" y selecciona las columnas requeridas.
-
-El script guarda los datos preprocesados en la carpeta "prep" que se encuentra dentro de "data"
-
+- Este script lee todos los achivos en la carpeta "raw".
+- Para cada uno selecciona las columnas requeridas.
+- Para cada uno guarda los datos preprocesados en la carpeta "prep".
 '''
 
-sys.path.append('../src')
-from scripts import preprocess_data
 import os
 import sys
+sys.path.append('../src')
+from scripts import preprocess_data
 
 
 if __name__ == "__main__":
