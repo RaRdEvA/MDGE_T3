@@ -1,3 +1,7 @@
+'''
+En este script se encuentr
+'''
+
 import os
 import joblib
 import pandas as pd

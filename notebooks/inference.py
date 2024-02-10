@@ -1,7 +1,14 @@
+'''
+Este código ejecuta  limpieza de archivos para elegir solamente las columnas que se usarán en el entrenamiento.
+
+Sin importar el orden o la cantidad de columnas que tenga, elegirá solamente las que se usan para el entrenamiento y/o la inferencia.
+'''
+
 import os
 import joblib
 import pandas as pd
 
+# Función que define cómo se ejecutará la inferencia así como sus insumos
 def perform_inference(input_dir, model_path, output_dir):
     # Cargar el modelo entrenado
     model = joblib.load(model_path)
@@ -25,6 +32,7 @@ def perform_inference(input_dir, model_path, output_dir):
             pd.DataFrame(predictions).to_csv(output_file_path, index=False, header=["Predicted_SalePrice"])
             print(f"Predicciones guardadas en {output_file_path}")
 
+# Ejecución de la inferencia
 if __name__ == "__main__":
     # Directorios de entrada y salida
     input_dir = "../data/inference"
