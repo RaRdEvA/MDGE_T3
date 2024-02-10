@@ -6,10 +6,10 @@ El script guarda los datos preprocesados en la carpeta "prep" que se encuentra d
 
 '''
 
-import os
-import sys
 sys.path.append('../src')
 from scripts import preprocess_data
+import os
+import sys
 
 
 if __name__ == "__main__":
