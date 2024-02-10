@@ -23,10 +23,10 @@ if __name__ == "__main__":
         os.makedirs(OUTPUT_DIR)
 
     # Listar archivos en la carpeta de entrada
-    input_files = os.listdir(INPUT_DIR)
+    INPUT_FILES = os.listdir(INPUT_DIR)
 
     # Entrenar el modelo para cada archivo .csv en la carpeta de entrada
-    for file in input_files:
+    for file in INPUT_FILES:
         if file.endswith(".csv"):  # Solo procesar archivos CSV
             input_file_path = os.path.join(INPUT_DIR, file)
             train_model(input_file_path, OUTPUT_DIR)
