@@ -8,28 +8,10 @@ Después de seleccionar las columnas requeridas, el script guarda los datos prep
 import pandas as pd
 import os
 
-def preprocess_data(input_file, output_file):
-    # Leer el archivo CSV de entrada
-    data = pd.read_csv(input_file)
+import sys
+sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
 
-    # Determinar si el archivo tiene la columna 'SalePrice'
-    has_sale_price_column = 'SalePrice' in data.columns
-
-    # Seleccionar las columnas requeridas
-    selected_columns = ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']
-    if has_sale_price_column:
-        selected_columns.append('SalePrice')
-
-    # Completar valores faltantes (NaN) y en blanco con la media de cada columna
-    for column in selected_columns:
-        data[column].fillna(data[column].mean(), inplace=True)
-
-    preprocessed_data = data[selected_columns]
-
-    # Guardar el resultado en un nuevo archivo CSV
-    preprocessed_data.to_csv(output_file, index=False)
-
-    print(f"Datos preprocesados guardados en {output_file}")
+from scripts import preprocess_data
 
 if __name__ == "__main__":
     # Directorios de entrada y salida

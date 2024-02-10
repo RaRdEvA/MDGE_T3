@@ -1,7 +1,9 @@
 '''
-Este código ejecuta  limpieza de archivos para elegir solamente las columnas que se usarán en el entrenamiento.
+Este código se encarga de realizar la inferencia de un modelo entrenado en un conjunto de datos de entrada.
 
-Sin importar el orden o la cantidad de columnas que tenga, elegirá solamente las que se usan para el entrenamiento y/o la inferencia.
+Consta de la definición de una función que toma como argumentos los directorios de entrada y salida, así como el path del modelo entrenado.
+
+Posteriormente ejecuta la inferencia para cada archivo en la carpeta de entrada, guardando las predicciones en la carpeta de salida.
 '''
 
 import os
