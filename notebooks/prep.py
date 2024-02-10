@@ -26,6 +26,19 @@ if __name__ == "__main__":
     input_dir = "../data/raw"
     output_dir = "../data/prep"
 
+# Define the path to the data folder relative to the script directory
+data_folder_path = os.path.join(script_directory, "../data")
+
+# List all entries in the data folder
+data_folder_contents = os.listdir(data_folder_path)
+
+# Print the contents of the data folder
+print("Contents of the ../data folder:")
+for item in data_folder_contents:
+    print(item)
+
+
+'''
     # Cambiar directorio de trabajo
     script_directory = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_directory)
@@ -43,3 +56,4 @@ if __name__ == "__main__":
             input_file_path = os.path.join(input_dir, file)
             output_file_path = os.path.join(output_dir, file)
             preprocess_data(input_file_path, output_file_path)
+'''
