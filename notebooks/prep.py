@@ -12,8 +12,14 @@ def preprocess_data(input_file, output_file):
     # Leer el archivo CSV de entrada
     data = pd.read_csv(input_file)
 
+    # Determinar si el archivo tiene la columna 'SalePrice'
+    has_sale_price_column = 'SalePrice' in data.columns
+
     # Seleccionar las columnas requeridas
-    selected_columns = ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF', 'SalePrice']
+    selected_columns = ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']
+    if has_sale_price_column:
+        selected_columns.append('SalePrice')
+
     preprocessed_data = data[selected_columns]
 
     # Guardar el resultado en un nuevo archivo CSV
