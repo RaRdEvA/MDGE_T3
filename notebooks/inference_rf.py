@@ -19,13 +19,13 @@ from scripts import perform_inference
 # Ejecución de la inferencia
 if __name__ == "__main__":
     # Directorios de entrada y salida
-    input_dir = "../data/inference"
-    model_path = "../models/train_model.joblib"  # Cambiar a train_model.joblib
-    output_dir = "../data/predictions"
+    INPUT_DIR = "../data/inference"
+    MODEL_PATH = "../models/train_model.joblib"  # Cambiar a train_model.joblib
+    OUTPUT_DIR = "../data/predictions"
 
     # Asegurarse de que la carpeta de salida exista, si no, crearla
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
 
     # Realizar inferencia para los archivos de la carpeta de entrada
-    perform_inference(input_dir, model_path, output_dir)
+    perform_inference(INPUT_DIR, MODEL_PATH, OUTPUT_DIR)
