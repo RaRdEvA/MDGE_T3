@@ -31,7 +31,7 @@ if __name__ == "__main__":
         os.makedirs(output_dir)
 
     # Listar archivos en la carpeta de entrada
-    input_files = os.listdir(input_dir)
+#    input_files = os.listdir(input_dir)
 
     # Preprocesar cada archivo de entrada
     for file in input_files:
