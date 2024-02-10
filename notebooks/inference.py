@@ -28,7 +28,7 @@ def perform_inference(input_dir, model_path, output_dir):
 if __name__ == "__main__":
     # Directorios de entrada y salida
     input_dir = "../data/inference"
-    model_path = "../models/train_model.joblib"
+    model_path = "../models/train_model.joblib"  # Cambiar a train_model.joblib
     output_dir = "../data/predictions"
 
     # Asegurarse de que la carpeta de salida exista, si no, crearla

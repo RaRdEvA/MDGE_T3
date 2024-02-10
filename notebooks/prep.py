@@ -20,6 +20,10 @@ def preprocess_data(input_file, output_file):
     if has_sale_price_column:
         selected_columns.append('SalePrice')
 
+    # Completar valores faltantes (NaN) y en blanco con la media de cada columna
+    for column in selected_columns:
+        data[column].fillna(data[column].mean(), inplace=True)
+
     preprocessed_data = data[selected_columns]
 
     # Guardar el resultado en un nuevo archivo CSV
