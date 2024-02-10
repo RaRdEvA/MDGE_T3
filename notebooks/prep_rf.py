@@ -6,11 +6,11 @@ El script guarda los datos preprocesados en la carpeta "prep" que se encuentra d
 
 '''
 
-sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
 import os
 import sys
 from scripts import preprocess_data
 
+sys.path.append('../src')
 
 if __name__ == "__main__":
     # Directorios de entrada y salida
