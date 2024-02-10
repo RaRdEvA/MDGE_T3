@@ -23,9 +23,13 @@ def preprocess_data(input_file, output_file):
 
 if __name__ == "__main__":
     # Directorios de entrada y salida
-    input_dir = "data/raw/"
-    output_dir = "data/prep/"
-    
+    input_dir = "../data/raw"
+    output_dir = "../data/prep"
+
+    # Cambiar directorio de trabajo
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_directory)
+
     # Asegurarse de que la carpeta de salida exista, si no, crearla
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
