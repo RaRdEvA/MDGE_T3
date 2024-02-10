@@ -1,13 +1,16 @@
+'''
+
+Este script lee todos los achivos en la carpeta "raw" y selecciona las columnas requeridas.
+
+El script guarda los datos preprocesados en la carpeta "prep" que se encuentra dentro de "data"
+
+'''
+
 sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
 from scripts import preprocess_data
 import os
 import sys
 
-'''
-Este script lee todos los achivos en la carpeta "raw" y selecciona las columnas requeridas.
-
-El script guarda los datos preprocesados en la carpeta "prep" que se encuentra dentro de "data".
-'''
 
 if __name__ == "__main__":
     # Directorios de entrada y salida
