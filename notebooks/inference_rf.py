@@ -5,7 +5,8 @@ entrenado en un conjunto de datos de entrada.
 Consta de la definición de una función que toma como argumentos
 los directorios de entrada y salida, así como el path del modelo entrenado.
 
-Posteriormente ejecuta la inferencia para cada archivo en la carpeta de entrada,
+Posteriormente ejecuta la inferencia para cada archivo
+que se encuentre presente en la carpeta de entrada,
 guardando las predicciones en la carpeta de salida.
 '''
 
