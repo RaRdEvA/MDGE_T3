@@ -1,16 +1,13 @@
 '''
-ESte script entrena un modelo de regresión lineal para predecir el precio de venta de casas en Ames, Iowa, utilizando datos de entrada en formato CSV.
+Este script entrena un modelo de regresión lineal
+para predecir el precio de venta de casas en Ames, Iowa,
+utilizando datos de entrada en formato CSV.
 
-El modelo entrenado se guarda en un archivo .joblib en la carpeta de salida.
+El modelo entrenado se guarda en un archivo .joblib
+en la carpeta de salida.
 '''
 
 import os
-import joblib
-import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-
 import sys
 sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
 

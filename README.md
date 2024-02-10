@@ -95,12 +95,31 @@ Uno de los requisitos de la tarea fue la ejecución de linting con pylint y flak
 
 ### Pylint
 
-El resultado de la ejecución de pylint en los scripts de la carpeta notebooks fue el siguiente:
+El resultado de la ejecución de pylint en los scripts de la carpeta notebooks indicó que el código es incorrecto siempre en el mismo caso:
+
+```python
+sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
+from scripts import perform_inference
+```
+
+El resultado es el siguiente para pylint:
 
 ```bash
+************* Module inference_rf
+inference_rf.py:17:0: E0401: Unable to import 'scripts' (import-error)
+inference_rf.py:17:0: C0413: Import "from scripts import perform_inference" should be placed at the top of the module (wrong-import-position)
 
+------------------------------------------------------------------
+Your code has been rated at 4.55/10 (previous run: 1.82/10, +2.73)
+```
 
+El resultado es el siguiente para flake8:
 
+```bash
+inference_rf.py:17:1: E402 module level import not at top of file
+```
+
+Hasta el momento de crear este README, no se ha encontrado una solución para este problema. Sin embargo, el código funciona correctamente y no se ha encontrado un problema en su ejecución. El resto del código está modularizado correctamente.
 
 ## Tarea solicitada
 

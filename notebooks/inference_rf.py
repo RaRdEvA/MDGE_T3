@@ -13,7 +13,6 @@ guardando las predicciones en la carpeta de salida.
 import os
 import sys
 sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
-
 from scripts import perform_inference
 
 # Ejecución de la inferencia
