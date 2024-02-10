@@ -1,15 +1,15 @@
 '''
-Este código se encarga de realizar la inferencia de un modelo entrenado en un conjunto de datos de entrada.
+Este código se encarga de realizar la inferencia de un modelo
+entrenado en un conjunto de datos de entrada.
 
-Consta de la definición de una función que toma como argumentos los directorios de entrada y salida, así como el path del modelo entrenado.
+Consta de la definición de una función que toma como argumentos
+los directorios de entrada y salida, así como el path del modelo entrenado.
 
-Posteriormente ejecuta la inferencia para cada archivo en la carpeta de entrada, guardando las predicciones en la carpeta de salida.
+Posteriormente ejecuta la inferencia para cada archivo en la carpeta de entrada,
+guardando las predicciones en la carpeta de salida.
 '''
 
 import os
-import joblib
-import pandas as pd
-
 import sys
 sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
 
