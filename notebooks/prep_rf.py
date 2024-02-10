@@ -8,9 +8,9 @@ El script guarda los datos preprocesados en la carpeta "prep" que se encuentra d
 
 import os
 import sys
+sys.path.append('../src')
 from scripts import preprocess_data
 
-sys.path.append('../src')
 
 if __name__ == "__main__":
     # Directorios de entrada y salida
