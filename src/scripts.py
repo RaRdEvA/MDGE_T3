@@ -81,7 +81,9 @@ def perform_inference(input_dir, model_path, output_dir):
     for file in input_files:
         if file.endswith(".csv"):  # Solo procesar archivos CSV
             input_file_path = os.path.join(input_dir, file)
-            output_file_path = os.path.join(output_dir, f"{os.path.splitext(file)[0]}_predictions.csv")
+            output_file_path = os.path.join(
+                output_dir,
+                f"{os.path.splitext(file)[0]}_predictions.csv")
 
             # Leer datos de entrada
             data = pd.read_csv(input_file_path)
@@ -90,5 +92,6 @@ def perform_inference(input_dir, model_path, output_dir):
             predictions = model.predict(data)
 
             # Guardar predicciones en archivo CSV
-            pd.DataFrame(predictions).to_csv(output_file_path, index=False, header=["Predicted_SalePrice"])
+            pd.DataFrame(predictions).to_csv(output_file_path,
+                                             index=False, header=["Predicted_SalePrice"])
             print(f"Predicciones guardadas en {output_file_path}")
