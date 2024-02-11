@@ -1,4 +1,11 @@
-# scripts.py
+'''
+Este módulo provee las funciones que 
+son usadas en los scripts de ejecución de:
+- Preprocesamiento de datos
+- Entrenamiento de modelos
+- Inferencia
+Consta de 3 funciones que cubren las tareas mencionadas
+'''
 
 import pandas as pd
 import os
@@ -15,7 +22,14 @@ def preprocess_data(input_file, output_file):
     has_sale_price_column = 'SalePrice' in data.columns
 
     # Seleccionar las columnas requeridas
-    selected_columns = ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']
+    selected_columns = [
+            'OverallQual',
+            'GrLivArea',
+            'GarageCars',
+            'GarageArea',
+            'TotalBsmtSF',
+            '1stFlrSF'
+            ]
     if has_sale_price_column:
         selected_columns.append('SalePrice')
 
