@@ -14,6 +14,13 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
+'''
+Esta función toma archivos de la carpeta y los preprocesa
+Toma solamente las variables que se usan para entrenamiento
+También identifica si contiene la variable objetivo
+Rellena los na y los valores en blanco con la media de cada columna
+Guarda el resultado en un nuevo archivo CSV
+'''
 def preprocess_data(input_file, output_file):
     # Leer el archivo CSV de entrada
     data = pd.read_csv(input_file)
@@ -44,6 +51,12 @@ def preprocess_data(input_file, output_file):
 
     print(f"Datos preprocesados guardados en {output_file}")
 
+'''
+Esta función entrena un modelo de regresión lineal
+para predecir el precio de venta de casas en Ames,
+Iowa, utilizando datos de entrada en formato CSV.
+El modelo entrenado se guarda en un archivo .joblib en la carpeta de salida.
+'''
 def train_model(input_file, output_dir):
     # Leer el archivo CSV de entrada
     data = pd.read_csv(input_file)
@@ -70,6 +83,11 @@ def train_model(input_file, output_dir):
     joblib.dump(model, model_path)
     print(f"Modelo entrenado guardado en {model_path}")
 
+'''
+Esta función realiza inferencia con un modelo entrenado
+y datos de entrada en formato CSV.
+Guarda las predicciones en un archivo CSV en la carpeta de salida.
+'''
 def perform_inference(input_dir, model_path, output_dir):
     # Cargar el modelo entrenado
     model = joblib.load(model_path)
