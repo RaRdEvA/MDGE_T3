@@ -1,5 +1,5 @@
 '''
-Este módulo provee las funciones que 
+Este módulo provee las funciones que
 son usadas en los scripts de ejecución de:
 - Preprocesamiento de datos
 - Entrenamiento de modelos
@@ -31,14 +31,13 @@ def preprocess_data(input_file, output_file):
     has_sale_price_column = 'SalePrice' in data.columns
 
     # Seleccionar las columnas requeridas
-    selected_columns = [
-            'OverallQual',
+    selected_columns = ['OverallQual',
             'GrLivArea',
             'GarageCars',
             'GarageArea',
             'TotalBsmtSF',
-            '1stFlrSF'
-            ]
+            '1stFlrSF']
+
     if has_sale_price_column:
         selected_columns.append('SalePrice')
 
