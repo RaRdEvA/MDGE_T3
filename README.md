@@ -121,6 +121,19 @@ inference_rf.py:17:1: E402 module level import not at top of file
 
 Hasta el momento de crear este README, no se ha encontrado una solución para este problema. Sin embargo, el código funciona correctamente y no se ha encontrado un problema en su ejecución. El resto del código está modularizado correctamente.
 
+En el caso del archivo de scripts marca errores en las funciones para la sección de training, esto se dejó intencionalmente así para no modificar el código con variables que no sean significativas.
+
+```bash
+************* Module scripts
+scripts.py:68:4: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
+scripts.py:69:4: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
+scripts.py:72:4: C0103: Variable name "X_train" doesn't conform to snake_case naming style (invalid-name)
+scripts.py:72:13: C0103: Variable name "X_test" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 9.05/10 (previous run: 7.86/10, +1.19)
+```
+
 ## Tarea solicitada
 
 Las instrucciones de la tarea que llevó a la construcción de este repositorio son las siguientes:
@@ -129,7 +142,7 @@ Las instrucciones de la tarea que llevó a la construcción de este repositorio 
 
 En el capítulo 4 aprendiste sobre la importancia de escribir código limpio cuando tengas que crear un producto de datos. Cuando estas construyendo un proyecto de data science, la idea es comenzar con un notebook para prototipar rápido, experimentar cosas, cuando estes listo puedes extraer el código y ponerlo en un script. Recuerda que es importante documentar el código siguiendo las prácticas que vimos.
 
-#### Objetivo:
+#### Objetivo
 
 Toma el código de tu tarea anterior y conviertelo en un repositorio, utilizando las mejores prácticas que revisamos para escribir código limpio.
 
@@ -137,7 +150,7 @@ Toma el código de tu tarea anterior y conviertelo en un repositorio, utilizando
 
 Un repositorio público en Github.
 
-#### Puntos que deberás cubrir:
+#### Puntos que deberás cubrir
 
 - Crea la estructura del repositorio (revisa la estructura propuesta en clase).
 - Tu notebook o notebooks, los puedes guardar en un directorio que se llame notebooks.
