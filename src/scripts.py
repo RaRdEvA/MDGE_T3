@@ -32,11 +32,11 @@ def preprocess_data(input_file, output_file):
 
     # Seleccionar las columnas requeridas
     selected_columns = ['OverallQual',
-            'GrLivArea',
-            'GarageCars',
-            'GarageArea',
-            'TotalBsmtSF',
-            '1stFlrSF']
+                'GrLivArea',
+                'GarageCars',
+                'GarageArea',
+                'TotalBsmtSF',
+                '1stFlrSF']
 
     if has_sale_price_column:
         selected_columns.append('SalePrice')
