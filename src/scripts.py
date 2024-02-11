@@ -7,8 +7,8 @@ son usadas en los scripts de ejecución de:
 Consta de 3 funciones que cubren las tareas mencionadas
 '''
 
-import pandas as pd
 import os
+import pandas as pd
 import joblib
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
