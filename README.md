@@ -101,11 +101,9 @@ Aquí se almacenan los modelos entrenados.
 
 Uno de los requisitos de la tarea fue la ejecución de linting con pylint y flake8.
 
-### Pylint
+El resultado de la ejecución de ambos sobre los scripts de Python mostró todos los códigos refactorizados con 10 de 10 de calificación en Pylint y sin mensajes en Flake8.
 
-El resultado de la ejecución de pylint en los scripts de la carpeta notebooks indicó todos los códigos refactorizados con 10 de 10 de calificación.
-
-El resultado es el siguiente para pylint:
+El resultado fue el siguiente:
 
 ```bash
 xxx@xxx.xxx@vmMDGE:~/MDGE/MDGE_T3$ pylint prep_rf.py; pylint train_rf.py; pylint inference_rf.py; pylint ./src/scripts.py 
@@ -124,28 +122,14 @@ Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 
 --------------------------------------------------------------------
 Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+xxx@xxx.xxx@vmMDGE:~/MDGE/MDGE_T3$ flake8 prep_rf.py; flake8 train_rf.py; flake8 inference_rf.py; flake8 ./src/scripts.py 
+xxx@xxx.xxx@vmMDGE:~/MDGE/MDGE_T3$ 
 ```
 
-El resultado es el siguiente para flake8:
+En la siguiente imagen podemos apreciar la evidencia:
 
-```bash
-inference_rf.py:17:1: E402 module level import not at top of file
-```
-
-Hasta el momento de crear este README, no se ha encontrado una solución para este problema. Sin embargo, el código funciona correctamente y no se ha encontrado un problema en su ejecución. El resto del código está modularizado correctamente.
-
-En el caso del archivo de scripts marca errores en las funciones para la sección de training, esto se dejó intencionalmente así para no modificar el código con variables que no sean significativas.
-
-```bash
-************* Module scripts
-scripts.py:68:4: C0103: Variable name "X" doesn't conform to snake_case naming style (invalid-name)
-scripts.py:69:4: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
-scripts.py:72:4: C0103: Variable name "X_train" doesn't conform to snake_case naming style (invalid-name)
-scripts.py:72:13: C0103: Variable name "X_test" doesn't conform to snake_case naming style (invalid-name)
-
-------------------------------------------------------------------
-Your code has been rated at 9.05/10 (previous run: 7.86/10, +1.19)
-```
+![linting](lint_proof.png)
 
 ## Tarea solicitada
 
