@@ -65,8 +65,6 @@ El repositorio está organizado de la siguiente forma:
 - [train_rf.py](train_rf.py)
   - Versión refactorizada del script [train.py](train.py).
 
-### 
-
 ### data
 
 - Inference

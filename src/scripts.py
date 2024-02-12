@@ -14,6 +14,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
+
 def preprocess_data(input_file, output_file):
 
     '''
@@ -62,7 +63,6 @@ def preprocess_data(input_file, output_file):
 
 
 def train_model(input_file, output_dir):
-
     '''
     Esta función entrena un modelo de regresión lineal
     para predecir el precio de venta de casas en Ames,
@@ -87,8 +87,8 @@ def train_model(input_file, output_dir):
               'GrLivArea',
               'GarageCars',
               'GarageArea',
-               'TotalBsmtSF',
-               '1stFlrSF']]
+              'TotalBsmtSF',
+              '1stFlrSF']]
     y = data['SalePrice']
 
     # Dividir en sets train y test
