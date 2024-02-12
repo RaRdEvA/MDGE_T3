@@ -8,8 +8,7 @@ en la carpeta de salida.
 '''
 
 import os
-import sys
-from scripts import train_model
+from src.scripts import train_model
 
 if __name__ == "__main__":
     # Directorios de entrada y salida

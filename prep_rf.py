@@ -5,8 +5,7 @@
 '''
 
 import os
-import sys
-from scripts import preprocess_data
+from src.scripts import preprocess_data
 
 
 if __name__ == "__main__":
