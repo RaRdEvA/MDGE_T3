@@ -11,8 +11,7 @@ guardando las predicciones en la carpeta de salida.
 '''
 
 import os
-import sys
-from scripts import perform_inference
+from src.scripts import perform_inference
 
 # Ejecución de la inferencia
 if __name__ == "__main__":
