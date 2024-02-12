@@ -49,7 +49,7 @@ def preprocess_data(input_file, output_file):
     if has_sale_price_column:
         selected_columns.append('SalePrice')
 
-    # Completar valores faltantes (NaN) y en blanco con la media de cada columna
+    # Completar valores faltantes (NaN y blank) con la media de la columna
     for column in selected_columns:
         data[column].fillna(data[column].mean(), inplace=True)
 
@@ -60,13 +60,15 @@ def preprocess_data(input_file, output_file):
 
     print(f"Datos preprocesados guardados en {output_file}")
 
+
 def train_model(input_file, output_dir):
 
     '''
     Esta función entrena un modelo de regresión lineal
     para predecir el precio de venta de casas en Ames,
     Iowa, utilizando datos de entrada en formato CSV.
-    El modelo entrenado se guarda en un archivo .joblib en la carpeta de salida.
+    El modelo entrenado se guarda en un archivo .joblib
+    en la carpeta de salida.
 
     Args:
     input_file: str, path del archivo de entrada
@@ -80,34 +82,36 @@ def train_model(input_file, output_dir):
     # Leer el archivo CSV de entrada
     data = pd.read_csv(input_file)
 
-    # Separar características (x) y variable objetivo (y)
+    # Separar features (x) y variable objetivo (y)
     x = data[['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']]
     y = data['SalePrice']
 
-    # Dividir datos en conjunto de entrenamiento y prueba
+    # Dividir en sets train y test
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
     # Entrenar modelo de regresión lineal
     model = LinearRegression()
     model.fit(x_train, y_train)
 
-    # Predecir en el conjunto de prueba y calcular error
+    # Predecir en el test set y calcular error
     y_pred = model.predict(x_test)
     mse = mean_squared_error(y_test, y_pred)
     print(f"Error cuadrático medio en conjunto de prueba: {mse}")
 
     # Guardar el modelo entrenado
-    filename = os.path.splitext(os.path.basename(input_file))[0]  # Nombre del archivo sin extensión
+    filename = os.path.splitext(os.path.basename(input_file))[0]
     model_path = os.path.join(output_dir, f"{filename}_model.joblib")
     joblib.dump(model, model_path)
     print(f"Modelo entrenado guardado en {model_path}")
 
+
 def perform_inference(input_dir, model_path, output_dir):
 
     '''
-    Esta función realiza inferencia con un modelo entrenado
-    y datos de entrada en formato CSV.
-    Guarda las predicciones en un archivo CSV en la carpeta de salida.
+    Esta función realiza inferencia con un modelo
+    entrenado y datos de entrada en formato CSV.
+    Guarda las predicciones en un archivo CSV
+    en la carpeta de salida.
 
     Args:
     input_dir: str, path de la carpeta de entrada
@@ -125,7 +129,7 @@ def perform_inference(input_dir, model_path, output_dir):
     # Listar archivos en la carpeta de entrada
     input_files = os.listdir(input_dir)
 
-    # Realizar predicciones para cada archivo en la carpeta de entrada
+    # Realizar predicciones para cada archivo en la carpeta
     for file in input_files:
         if file.endswith(".csv"):  # Solo procesar archivos CSV
             input_file_path = os.path.join(input_dir, file)

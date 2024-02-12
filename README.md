@@ -11,76 +11,86 @@ El repositorio está organizado de la siguiente forma:
 ```bash
 .
 ├── README.md
-├── Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb
 ├── data
 │   ├── inference
 │   │   └── test.csv
 │   ├── predictions
 │   │   └── test_predictions.csv
 │   ├── prep
+│   │   ├── test.csv
 │   │   └── train.csv
 │   ├── raw
 │   │   ├── test.csv
 │   │   └── train.csv
 │   ├── test.csv
 │   └── train.csv
+├── inference.py
+├── inference_rf.py
 ├── models
 │   └── train_model.joblib
 ├── notebooks
-│   ├── inference.py
-│   ├── inference_rf.py
-│   ├── prep.py
-│   ├── prep_rf.py
-│   ├── train.py
-│   └── train_rf.py
-└── src
-    ├── __pycache__
-    │   └── scripts.cpython-38.pyc
-    └── scripts.py
+│   └── Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb
+├── prep.py
+├── prep_rf.py
+├── src
+│   ├── __pycache__
+│   │   └── scripts.cpython-38.pyc
+│   └── scripts.py
+├── train.py
+└── train_rf.py
 
-9 directories, 18 files
+9 directories, 19 files
 ```
 
 ## Contenido
 
-### Tarea 1
+### root
 
-En root se puede encontrar el archivo [Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb](Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb) que contiene el desarrollo de la tarea 1, contiene un análisis exploratorio y el entrenamiento; lo cual, sirvió como fundamento para crear este repositorio y sus funcionalidades.
+- [README.md](README.md)
+  - Este archivo.
+- [inference.py](inference.py)
+  - Script que realiza la inferencia con el modelo entrenado y los datos de prueba.
+  - La salida se guarda en la carpeta predictions.
+- [inference_rf.py](inference_rf.py)
+  - Versión refactorizada del script [inference.py](inference.py).
+- [prep.py](prep.py)
+  - Script que realiza el preprocesamiento de los datos de entrenamiento y prueba.
+  - La salida se guarda en la carpeta prep.
+- [prep_rf.py](prep_rf.py)
+  - Versión refactorizada del script [prep.py](prep.py).
+- [train.py](train.py)
+  - Script que realiza el entrenamiento del modelo.
+  - La salida se guarda en la carpeta models.
+  - Este script es el que se usó para entrenar el modelo que se encuentra en la carpeta models.
+- [train_rf.py](train_rf.py)
+  - Versión refactorizada del script [train.py](train.py).
 
-### Data
+### 
+
+### data
 
 - Inference
-  - Contiene los archivos que se usan para ejecutar la inferencia con el script del mismo nombre [inference.py](notebooks/inference.py).
+  - Contiene los archivos que se usan para ejecutar la inferencia con el script del mismo nombre [inference.py](inference.py).
 - predictions
-  - Contiene el resultado de la inferemcia después de ejecutar el script de inferencia. Guarda un resultado por cada archivo que haya sido enviado a inferencia usando [inference.py](notebooks/inference.py)
+  - Contiene el resultado de la inferemcia después de ejecutar el script de inferencia. Guarda un resultado por cada archivo que haya sido enviado a inferencia usando [inference.py](inference.py)
 - prep
-  - Aquí se almacenan los datos resultados del preprocesamiento con el script de preprocesamiento [prep.py](notebooks/prep.py).
+  - Aquí se almacenan los datos resultados del preprocesamiento con el script de preprocesamiento [prep.py](prep.py).
 - raw
-  - Estos son los datos que toma el script de preprocesamiento [prep.py](notebooks/prep.py) para generar los datos en la carpeta prep.
+  - Estos son los datos que toma el script de preprocesamiento [prep.py](prep.py) para generar los datos en la carpeta prep.
 - [test.csv](data/test.csv)
   - Este archivo es el original provisto por la competencia de kaggle y se usa para realizar la inferencia. También se usa como insumo para los scripts de la tarea.
 - [train.csv](data/train.csv)
   - Este archivo es el original provisto por la competencia de kaggle y se usa para realizar el entrenamiento. Tambien se usa como insumo para los scripts de la tarea.
 
-### Models
+### models
 
 Aquí se almacenan los modelos entrenados.
 
-### Notebooks
+### notebooks
 
-- [inference.py](notebooks/inference.py)
-  - Script que realiza la inferencia con el modelo entrenado y los datos de prueba.
-  - La salida se guarda en la carpeta predictions.
-- [prep.py](notebooks/prep.py)
-  - Script que realiza el preprocesamiento de los datos de entrenamiento y prueba.
-  - La salida se guarda en la carpeta prep.
-- [train.py](notebooks/train.py)
-  - Script que realiza el entrenamiento del modelo.
-  - La salida se guarda en la carpeta models.
-  - Este script es el que se usó para entrenar el modelo que se encuentra en la carpeta models.
-- Aquellos scripts que tienen el sufijo _rf son versiones refactorizadas de los scripts originales. Estos scripts se usaron para realizar pruebas de refactorización y modularización del código.
+- Se encuentra el archivo [Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb](Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb) que contiene el desarrollo de la tarea 1, contiene un análisis exploratorio y el entrenamiento; lo cual, sirvió como fundamento para crear este repositorio y sus funcionalidades.
 
-### Src
+### src
 
 - [scripts.py](src/scripts.py)
   - Contiene las funciones que se usan en los scripts de la carpeta notebooks.
@@ -95,22 +105,27 @@ Uno de los requisitos de la tarea fue la ejecución de linting con pylint y flak
 
 ### Pylint
 
-El resultado de la ejecución de pylint en los scripts de la carpeta notebooks indicó que el código es incorrecto siempre en el mismo caso:
-
-```python
-sys.path.append('../src')  # Agrega '../src' al PYTHONPATH
-from scripts import perform_inference
-```
+El resultado de la ejecución de pylint en los scripts de la carpeta notebooks indicó todos los códigos refactorizados con 10 de 10 de calificación.
 
 El resultado es el siguiente para pylint:
 
 ```bash
-************* Module inference_rf
-inference_rf.py:17:0: E0401: Unable to import 'scripts' (import-error)
-inference_rf.py:17:0: C0413: Import "from scripts import perform_inference" should be placed at the top of the module (wrong-import-position)
+xxx@xxx.xxx@vmMDGE:~/MDGE/MDGE_T3$ pylint prep_rf.py; pylint train_rf.py; pylint inference_rf.py; pylint ./src/scripts.py 
 
-------------------------------------------------------------------
-Your code has been rated at 4.55/10 (previous run: 1.82/10, +2.73)
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 ```
 
 El resultado es el siguiente para flake8:
