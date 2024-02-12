@@ -39,8 +39,8 @@ def train_model(input_file, output_dir):
 
 if __name__ == "__main__":
     # Directorios de entrada y salida
-    input_dir = "../data/prep"
-    output_dir = "../models"
+    input_dir = "./data/prep"
+    output_dir = "./models"
 
     # Asegurarse de que la carpeta de salida exista, si no, crearla
     if not os.path.exists(output_dir):

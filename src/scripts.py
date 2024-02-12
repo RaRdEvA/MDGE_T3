@@ -22,6 +22,14 @@ def preprocess_data(input_file, output_file):
     También identifica si contiene la variable objetivo
     Rellena los na y los valores en blanco con la media de cada columna
     Guarda el resultado en un nuevo archivo CSV
+
+    Args:
+    input_file: str, path del archivo de entrada
+    output_file: str, path del archivo de salida
+
+    Returns:
+    None
+
     '''
 
     # Leer el archivo CSV de entrada
@@ -59,6 +67,14 @@ def train_model(input_file, output_dir):
     para predecir el precio de venta de casas en Ames,
     Iowa, utilizando datos de entrada en formato CSV.
     El modelo entrenado se guarda en un archivo .joblib en la carpeta de salida.
+
+    Args:
+    input_file: str, path del archivo de entrada
+    output_dir: str, path de la carpeta de salida
+
+    Returns:
+    None
+
     '''
 
     # Leer el archivo CSV de entrada
@@ -92,6 +108,15 @@ def perform_inference(input_dir, model_path, output_dir):
     Esta función realiza inferencia con un modelo entrenado
     y datos de entrada en formato CSV.
     Guarda las predicciones en un archivo CSV en la carpeta de salida.
+
+    Args:
+    input_dir: str, path de la carpeta de entrada
+    model_path: str, path del modelo entrenado
+    output_dir: str, path de la carpeta de salida
+
+    Returns:
+    None
+
     '''
 
     # Cargar el modelo entrenado

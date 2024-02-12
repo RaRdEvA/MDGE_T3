@@ -1,19 +1,20 @@
 '''
-- Este script lee todos los achivos en la carpeta "raw".
-- Para cada uno selecciona las columnas requeridas.
-- Para cada uno guarda los datos preprocesados en la carpeta "prep".
+Este script entrena un modelo de regresión lineal
+para predecir el precio de venta de casas en Ames, Iowa,
+utilizando datos de entrada en formato CSV.
+
+El modelo entrenado se guarda en un archivo .joblib
+en la carpeta de salida.
 '''
 
 import os
 import sys
-sys.path.append('../src')
-from scripts import preprocess_data
-
+from scripts import train_model
 
 if __name__ == "__main__":
     # Directorios de entrada y salida
-    INPUT_DIR = "../data/raw"
-    OUTPUT_DIR = "../data/prep"
+    INPUT_DIR = "./data/prep"
+    OUTPUT_DIR = "./models"
 
     # Asegurarse de que la carpeta de salida exista, si no, crearla
     if not os.path.exists(OUTPUT_DIR):
@@ -22,9 +23,8 @@ if __name__ == "__main__":
     # Listar archivos en la carpeta de entrada
     INPUT_FILES = os.listdir(INPUT_DIR)
 
-    # Preprocesar cada archivo de entrada
+    # Entrenar el modelo para cada archivo .csv en la carpeta de entrada
     for file in INPUT_FILES:
         if file.endswith(".csv"):  # Solo procesar archivos CSV
             input_file_path = os.path.join(INPUT_DIR, file)
-            output_file_path = os.path.join(OUTPUT_DIR, file)
-            preprocess_data(input_file_path, output_file_path)
+            train_model(input_file_path, OUTPUT_DIR)
