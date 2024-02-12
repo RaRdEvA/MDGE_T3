@@ -80,19 +80,19 @@ def train_model(input_file, output_dir):
     # Leer el archivo CSV de entrada
     data = pd.read_csv(input_file)
 
-    # Separar características (X) y variable objetivo (y)
-    X = data[['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']]
+    # Separar características (x) y variable objetivo (y)
+    x = data[['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']]
     y = data['SalePrice']
 
     # Dividir datos en conjunto de entrenamiento y prueba
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
     # Entrenar modelo de regresión lineal
     model = LinearRegression()
-    model.fit(X_train, y_train)
+    model.fit(x_train, y_train)
 
     # Predecir en el conjunto de prueba y calcular error
-    y_pred = model.predict(X_test)
+    y_pred = model.predict(x_test)
     mse = mean_squared_error(y_test, y_pred)
     print(f"Error cuadrático medio en conjunto de prueba: {mse}")
 
