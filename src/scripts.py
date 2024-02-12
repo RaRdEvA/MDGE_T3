@@ -83,11 +83,19 @@ def train_model(input_file, output_dir):
     data = pd.read_csv(input_file)
 
     # Separar features (x) y variable objetivo (y)
-    x = data[['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']]
+    x = data[['OverallQual',
+              'GrLivArea',
+              'GarageCars',
+              'GarageArea',
+               'TotalBsmtSF',
+               '1stFlrSF']]
     y = data['SalePrice']
 
     # Dividir en sets train y test
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(x,
+                                                        y,
+                                                        test_size=0.2,
+                                                        random_state=42)
 
     # Entrenar modelo de regresión lineal
     model = LinearRegression()
@@ -145,5 +153,6 @@ def perform_inference(input_dir, model_path, output_dir):
 
             # Guardar predicciones en archivo CSV
             pd.DataFrame(predictions).to_csv(output_file_path,
-                                             index=False, header=["Predicted_SalePrice"])
+                                             index=False,
+                                             header=["Predicted_SalePrice"])
             print(f"Predicciones guardadas en {output_file_path}")
