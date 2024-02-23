@@ -1,0 +1,12 @@
+
+# Informamos cómo se separarán los datos en entrenamiento y test
+data_split:
+  test_size: 0.2
+  random_state: 42
+
+# Informamos el modelo que se utilizará y sus parámetros, junto con las características que se utilizarán
+model:
+  type: LinearRegression
+  parameters:
+    fit_intercept: True
+  features: ['OverallQual', 'GrLivArea', 'GarageCars', 'GarageArea', 'TotalBsmtSF', '1stFlrSF']

@@ -5,13 +5,20 @@
 '''
 
 import os
+import argparse
 from src.scripts import preprocess_data
+
+# Definimos y parseamos los argumentos de entrada
+parser = argparse.ArgumentParser(description='Preprocesa archivos CSV desde una carpeta de entrada y los guarda en una carpeta de salida.')
+parser.add_argument('--input_dir', type=str, default='./data/raw', help='Directorio de los archivos de entrada.')
+parser.add_argument('--output_dir', type=str, default='./data/prep', help='Directorio para guardar los archivos preprocesados.')
+args = parser.parse_args()
 
 
 if __name__ == "__main__":
-    # Directorios de entrada y salida
-    INPUT_DIR = "./data/raw"
-    OUTPUT_DIR = "./data/prep"
+    # Usamos los argumentos para los directorios de entrada y salida
+    INPUT_DIR = args.input_dir
+    OUTPUT_DIR = args.output_dir
 
     # Asegurarse de que la carpeta de salida exista, si no, crearla
     if not os.path.exists(OUTPUT_DIR):
