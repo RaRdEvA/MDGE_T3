@@ -20,9 +20,15 @@ from datetime import datetime
 # Configuración de loggers individuales
 now = datetime.now()
 date_time = now.strftime("%Y%m%d-%H%M%S")
-info_logger = setup_logger('info_', f'logs/info_{date_time}.log', log_level=1)
-debug_logger = setup_logger('debug_', f'logs/debug_{date_time}.log', log_level=2)
-error_logger = setup_logger('error_', f'logs/error_{date_time}.log', log_level=3)
+info_logger = setup_logger(
+    'info_', f'logs/info_{date_time}.log', log_level=1
+    )
+debug_logger = setup_logger(
+    'debug_', f'logs/debug_{date_time}.log', log_level=2
+    )
+error_logger = setup_logger(
+    'error_', f'logs/error_{date_time}.log', log_level=3
+    )
 
 def load_config(config_path):
     '''
@@ -38,12 +44,10 @@ def load_config(config_path):
     try:
         with open(config_path, 'r') as file:
             config = yaml.safe_load(file)
-        # Usando info_logger para registrar la carga exitosa de la configuración
-        info_logger.info(f"Configuración cargada exitosamente desde {config_path}")
+        info_logger.info(f"Conf. cargada exitosamente desde {config_path}")
         return config
     except Exception as e:
-        # Usando error_logger para registrar errores al cargar la configuración
-        error_logger.error("Error al cargar la configuración", exc_info=True)
+        error_logger.error("Error al cargar la conf.", exc_info=True)
         return None
 
 

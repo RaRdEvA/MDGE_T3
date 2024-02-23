@@ -10,6 +10,13 @@ en la carpeta de salida.
 import os
 import argparse
 from src.scripts import train_model, load_config
+from datetime import datetime
+from src.utils import setup_logger
+
+# Configuración del logger
+now = datetime.now()
+date_time = now.strftime("%Y%m%d-%H%M%S")
+logger = setup_logger('training', f'logs/training_{date_time}.log', log_level=2)
 
 # Definimos y parseamos los argumentos de entrada
 parser = argparse.ArgumentParser(description='Entrena un modelo utilizando datos preprocesados y guarda el modelo entrenado.')
@@ -23,6 +30,8 @@ if __name__ == "__main__":
     INPUT_DIR = args.input_dir
     OUTPUT_DIR = args.output_dir
     CONFIG_PATH = args.config_path
+
+    logger.info("Iniciando el proceso de entrenamiento del modelo")
 
     # Cargar la configuración utilizando load_config importada
     config = load_config(CONFIG_PATH)
@@ -38,4 +47,8 @@ if __name__ == "__main__":
     for file in INPUT_FILES:
         if file.endswith(".csv"):
             input_file_path = os.path.join(INPUT_DIR, file)
-            train_model(input_file_path, OUTPUT_DIR, config)
+            try:
+                train_model(input_file_path, OUTPUT_DIR, config)
+                logger.info(f"Modelo entrenado y guardado exitosamente para {file}")
+            except Exception as e:
+                logger.error(f"Error al entrenar el modelo para {file}", exc_info=True)
