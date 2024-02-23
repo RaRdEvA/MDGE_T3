@@ -1,5 +1,0 @@
-2024-02-23 07:33:42,764 - debug_ - INFO - Iniciando entrenamiento del modelo con datos de ./data/prep/test.csv
-2024-02-23 07:33:42,860 - debug_ - DEBUG - Datos de entrenamiento cargados desde ./data/prep/test.csv con 1459 filas y 6 columnas
-2024-02-23 07:33:43,147 - debug_ - INFO - Iniciando entrenamiento del modelo con datos de ./data/prep/train.csv
-2024-02-23 07:33:43,181 - debug_ - DEBUG - Datos de entrenamiento cargados desde ./data/prep/train.csv con 1460 filas y 7 columnas
-2024-02-23 07:33:43,466 - debug_ - DEBUG - Error cuadrático medio en conjunto de prueba: 1591935019.951266
