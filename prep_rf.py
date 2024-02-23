@@ -13,7 +13,7 @@ from src.utils import setup_logger
 # Configuración del logger
 now = datetime.now()
 date_time = now.strftime("%Y%m%d-%H%M%S")
-logger = setup_logger('preprocessing', f'logs/preprocessing_{date_time}.log', log_level=2)
+logger = setup_logger('preprocessing', log_level=2)
 
 # Definimos y parseamos los argumentos de entrada
 parser = argparse.ArgumentParser(description='Preprocesa archivos CSV desde una carpeta de entrada y los guarda en una carpeta de salida.')

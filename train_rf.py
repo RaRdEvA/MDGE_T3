@@ -16,7 +16,7 @@ from src.utils import setup_logger
 # Configuración del logger
 now = datetime.now()
 date_time = now.strftime("%Y%m%d-%H%M%S")
-logger = setup_logger('training', f'logs/training_{date_time}.log', log_level=2)
+logger = setup_logger('training', log_level=2)
 
 # Definimos y parseamos los argumentos de entrada
 parser = argparse.ArgumentParser(description='Entrena un modelo utilizando datos preprocesados y guarda el modelo entrenado.')

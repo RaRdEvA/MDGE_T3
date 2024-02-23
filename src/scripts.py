@@ -20,15 +20,9 @@ from datetime import datetime
 # Configuración de loggers individuales
 now = datetime.now()
 date_time = now.strftime("%Y%m%d-%H%M%S")
-info_logger = setup_logger(
-    'info_', f'logs/info_{date_time}.log', log_level=1
-    )
-debug_logger = setup_logger(
-    'debug_', f'logs/debug_{date_time}.log', log_level=2
-    )
-error_logger = setup_logger(
-    'error_', f'logs/error_{date_time}.log', log_level=3
-    )
+info_logger = setup_logger('info_', log_level=1)
+debug_logger = setup_logger('debug_', log_level=2)
+error_logger = setup_logger('error_', log_level=3)
 
 def load_config(config_path):
     '''
