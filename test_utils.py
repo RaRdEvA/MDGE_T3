@@ -9,7 +9,7 @@ def test_setup_logger_creates_file():
     Prueba que setup_logger crea un archivo de log correctamente.
     '''
     logger = setup_logger("test_logger", 2)
-    logger.info(f"Prueba")
+    logger.info(f'./logs/test_logger_*.log')
     assert os.path.exists(f'./logs/test_logger_*.log')
 
 
