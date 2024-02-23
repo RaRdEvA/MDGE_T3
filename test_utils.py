@@ -2,15 +2,16 @@ import pytest
 from src.utils import setup_logger
 import os
 import logging
+import glob
 
 
 def test_setup_logger_creates_file():
-    '''
-    Prueba que setup_logger crea un archivo de log correctamente.
-    '''
-    logger = setup_logger("test_logger", 2)
-    logger.info(f'./logs/test_logger_*.log')
-    assert os.path.exists(f'./logs/test_logger_*.log')
+    """Prueba que setup_logger crea un archivo de log correctamente."""
+    logger_name = "test_logger"
+    logger = setup_logger(logger_name, log_level=2)
+    log_files = glob.glob(f'./logs/{logger_name}_*.log')
+    assert len(log_files) > 0, "No se encontraron archivos de log para test_logger"
+
 
 
 def test_setup_logger_level_debug():
