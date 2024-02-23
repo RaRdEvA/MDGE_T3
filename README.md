@@ -26,6 +26,7 @@ El repositorio está organizado de la siguiente forma:
 │   └── train.csv
 ├── inference.py
 ├── inference_rf.py
+├── logs
 ├── models
 │   └── train_model.joblib
 ├── notebooks
@@ -36,10 +37,9 @@ El repositorio está organizado de la siguiente forma:
 │   ├── __pycache__
 │   │   └── scripts.cpython-38.pyc
 │   └── scripts.py
+│   └── utils.py
 ├── train.py
 └── train_rf.py
-
-9 directories, 19 files
 ```
 
 ## Contenido
@@ -64,6 +64,9 @@ El repositorio está organizado de la siguiente forma:
   - Este script es el que se usó para entrenar el modelo que se encuentra en la carpeta models.
 - [train_rf.py](train_rf.py)
   - Versión refactorizada del script [train.py](train.py).
+- [test_utils.py](test_utils.py)
+  - Script que contiene las pruebas unitarias para los scripts del archivo [scripts.py](src/scripts.py).
+  - Se ejecuta con pytest.
 
 ### data
 
@@ -80,6 +83,10 @@ El repositorio está organizado de la siguiente forma:
 - [train.csv](data/train.csv)
   - Este archivo es el original provisto por la competencia de kaggle y se usa para realizar el entrenamiento. Tambien se usa como insumo para los scripts de la tarea.
 
+### logs
+
+Aquí encontramos los archivos de logs generados por la función de logging de Python.
+
 ### models
 
 Aquí se almacenan los modelos entrenados.
@@ -93,6 +100,8 @@ Aquí se almacenan los modelos entrenados.
 - [scripts.py](src/scripts.py)
   - Contiene las funciones que se usan en los scripts de la carpeta notebooks.
   - Esto se hizo con la intención de ejecutar refactorización de código y modularizar el código. Tal cual se pidió en las instrucciones de la tarea.
+- [utils.py](src/utils.py)
+  - Contiene una función para registrar los logs de los scripts durante su ejecución.
 
 ## Refactorización
 
