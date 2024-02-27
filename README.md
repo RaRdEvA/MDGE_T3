@@ -11,6 +11,9 @@ El repositorio está organizado de la siguiente forma:
 ```bash
 .
 ├── README.md
+├── __pycache__
+│   └── test_utils.cpython-38-pytest-8.0.1.pyc
+├── config.yaml
 ├── data
 │   ├── inference
 │   │   └── test.csv
@@ -26,8 +29,20 @@ El repositorio está organizado de la siguiente forma:
 │   └── train.csv
 ├── inference.py
 ├── inference_rf.py
+├── lint_proof.png
 ├── logs
+│   ├── test_debug_logger_20240223-081414.log
+│   ├── test_debug_logger_20240223-081730.log
+│   ├── test_error_logger_20240223-081414.log
+│   ├── test_error_logger_20240223-081730.log
+│   ├── test_format_test_20240223-081414.log
+│   ├── test_format_test_20240223-081730.log
+│   ├── test_info_logger_20240223-081414.log
+│   ├── test_info_logger_20240223-081730.log
+│   ├── test_logger_20240223-081414.log
+│   └── test_logger_20240223-081730.log
 ├── models
+│   ├── model_20240223-073343.joblib
 │   └── train_model.joblib
 ├── notebooks
 │   └── Tarea_01_MDGE_169589_Javier_Castillo_Millan.ipynb
@@ -35,11 +50,15 @@ El repositorio está organizado de la siguiente forma:
 ├── prep_rf.py
 ├── src
 │   ├── __pycache__
-│   │   └── scripts.cpython-38.pyc
-│   └── scripts.py
+│   │   ├── scripts.cpython-38.pyc
+│   │   └── utils.cpython-38.pyc
+│   ├── scripts.py
 │   └── utils.py
+├── test_utils.py
 ├── train.py
 └── train_rf.py
+
+11 directories, 36 files
 ```
 
 ## Contenido
