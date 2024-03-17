@@ -165,6 +165,31 @@ Se ejecutaron pruebas unitarias con pytest. El resultado fue el siguiente:
 
 ![pytest](test_proof.png)
 
+## Arquitectura
+
+La arquitectura de este repositorio se basa en la modularización del código. Se crearon funciones que se usan en los scripts de la carpeta root. Estas funciones se encuentran en el archivo [scripts.py](src/scripts.py).
+
+Además, se creó un archivo [utils.py](src/utils.py) que contiene una función para registrar los logs de los scripts durante su ejecución.
+
+Está conformado por 3 procesos
+
+- Preprocesamiento
+  - Se realiza con el script [prep_rf.py](prep_rf.py)
+    - Este script toma los datos crudos de la carpeta data/raw y los procesa para dejarlos listos para el entrenamiento.
+    - La salida se guarda en la carpeta data/prep.
+- Entrenamiento
+  - Se realiza con el script [train_rf.py](train_rf.py)
+    - Este script toma los datos procesados de la carpeta data/prep y entrena un modelo.
+    - La salida se guarda en la carpeta models.
+- Inferencia
+  - Se realiza con el script [inference_rf.py](inference_rf.py)
+    - Este script toma el modelo entrenado y los datos de prueba para realizar la inferencia.
+    - La salida se guarda en la carpeta data/predictions. 
+
+El diagrama de arquitectura se muestra a continuación:
+
+![arquitectura](architecture.png)
+
 ## Tareas solicitadas
 
 Las instrucciones de las tareas que condujeron la construcción de este repositorio se encuentran en [tareas](https://github.com/Druizm128/arquitectura_de_producto_de_datos_2024/tree/main/tareas)
